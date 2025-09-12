@@ -4,8 +4,19 @@ export default function LandingPage() {
   return (
     <div className="container">
       <section className="hero">
-        <h1>Welcome to Sport School 🏆</h1>
-        <p>Your one-stop platform for training, stats, and progress tracking.</p>
+
+        <div className="information-container">
+
+
+        <h1>De kast</h1>
+    <textarea> 
+      Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum. Lorem ipsumLorem ipsum Lorem ipsumLorem ipsum
+
+    </textarea>
+
+    {/* <CtaComponent></CtaComponent> */}
+        </div>
+
       </section>
     </div>
   );

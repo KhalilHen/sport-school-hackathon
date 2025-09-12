@@ -1,9 +1,49 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: white;
+    // overflow: hidden; 
+
+}
 .container {
   font-family: Arial, sans-serif;
   color: #222;
+  background-color: white;
+  // height: ;
+  height: 98vh;
+  width: 98vw;
+
 }
 
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  // padding: 60px 20px;
+    background: linear-gradient(
+    to top right,
+    #447DEF 0%,
+    #3562BC 50%,
+    #274889 100%
+  );
+  // margin-top: 20px;
+  // margin-left: ;
+  margin: 10px;
+
+
+   height: 100%;       // exactly the screen height
+  width: 100%;        // exactly the screen width
+  border-radius: 20px; // applied on all sides
+  box-sizing: border-box;
+
+  display: flex;       // optional: centers content
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 300px; 
+
+
+  h1 {
+    color: white;
+
+  }
 }
+
