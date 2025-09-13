@@ -1,8 +1,8 @@
 import { Routes, Route, Link } from "react-router-dom";
-import LandingsPage from "./pages/landingPage";
-import Subscriptions from "./pages/subscriptions";
-import CoachPage from "./pages/coachPage";
-import CursusPage from "./pages/cursusPage";
+import LandingsPage from "./pages/LandingPage/landingPage";
+import Subscriptions from "./pages/SubscriptionsPage/subscriptions";
+import CoachPage from "./pages/CoachPage/coachPage";
+import CursusPage from "./pages/CursusPage/cursusPage";
 import NavigationBar from "./components/NavBarComponent/navbarComponent";
 
 function App() {
