@@ -1,4 +1,4 @@
-import "../css/Global.scss";
+import "../../css/Global.scss";
 
 export default function CursusPage() {
   return (

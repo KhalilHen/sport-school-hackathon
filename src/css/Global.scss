@@ -1,9 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   font-family: Arial, sans-serif;
   color: #222;
+  background-color: white;
+  height: calc(100vh - 60px); // full viewport height minus navbar height
+  width: 100vw;
+  background-color: white;
+  padding: 20px;
 }
 
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  background: linear-gradient(to top right,#447DEF 0%,#3562BC 50%,#274889 100%);
+
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center
 }
+
+  h1 {
+    color: white;
+  }
