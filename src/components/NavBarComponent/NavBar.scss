@@ -3,9 +3,10 @@
   justify-content: space-between; // left-section on left, login-button on right
   align-items: center;
   padding: 12px 24px;
-  background: #f5f5f5;
+  background: #111827;
   border-bottom: 1px solid #ddd;
   height: 60px;
+  border-radius: 0 0 25px 25px ;
 
   .left-section {
     display: flex;
@@ -15,6 +16,7 @@
       font-size: 20px;
       font-weight: bold;
       margin-right: 24px; // space between logo and nav links
+      color: white;
     }
 
     .nav-links {
@@ -23,7 +25,7 @@
 
       a {
         text-decoration: none;
-        color: #333;
+        color: white;
         font-weight: 500;
         transition: color 0.2s ease;
 
@@ -36,11 +38,12 @@
 
   .login-button {
     button {
-      padding: 6px 12px;
+      padding: 12px 36px;
       border: none;
       background: #0077ff;
       color: white;
-      border-radius: 6px;
+      border: 1px solid white;
+      border-radius: 25px;
       cursor: pointer;
       transition: background 0.2s ease;
 
