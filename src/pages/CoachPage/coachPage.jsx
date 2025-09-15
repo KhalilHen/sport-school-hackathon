@@ -1,4 +1,3 @@
-import "../../css/Global.scss";
 
 export default function CoachPage() {
   return (
