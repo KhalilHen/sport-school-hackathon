@@ -1,11 +1,94 @@
-import "../../css/Global.scss";
+import "../CoachPage/coachPage.scss";
 
 export default function CoachPage() {
   return (
     <div className="container">
       <section className="hero">
-        <h1>Coach Page</h1>
-        <p>Meet our expert coaches and take your training to the next level!</p>
+        <div className="coachPageContainer">
+          <h1>Meet Our Coaches</h1>
+          <div className="Coaches">
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+            <div className="coachCard">
+              <div className="coachImage"></div>
+              <div className="coachSpecialization">
+                <p>Specialization</p>
+              </div>
+              <div className="coachInfo">
+                <p>By Coach Name</p>
+                <p>€35</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
