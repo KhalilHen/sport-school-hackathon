@@ -8,7 +8,7 @@ export default function CoachPage() {
           <h1>Meet Our Coaches</h1>
           <div className="Coaches">
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
@@ -18,7 +18,7 @@ export default function CoachPage() {
               </div>
             </div>
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
@@ -28,7 +28,7 @@ export default function CoachPage() {
               </div>
             </div>
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
@@ -38,7 +38,7 @@ export default function CoachPage() {
               </div>
             </div>
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
@@ -48,7 +48,7 @@ export default function CoachPage() {
               </div>
             </div>
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
@@ -58,7 +58,7 @@ export default function CoachPage() {
               </div>
             </div>
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
@@ -68,7 +68,7 @@ export default function CoachPage() {
               </div>
             </div>
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
@@ -78,7 +78,7 @@ export default function CoachPage() {
               </div>
             </div>
             <div className="coachCard">
-              <div className="coachImage"></div>
+              <div className="coachImage"><img src="src/assets/sportcoach.jpg" alt="Coach 1" /></div>
               <div className="coachSpecialization">
                 <p>Specialization</p>
               </div>
