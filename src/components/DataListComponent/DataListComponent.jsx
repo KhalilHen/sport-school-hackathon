@@ -10,6 +10,7 @@ function DataListPage({ title, fetchUrl, renderItem }) {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
+
       },
     })
       .then((res) => res.json())
@@ -24,13 +25,13 @@ function DataListPage({ title, fetchUrl, renderItem }) {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="p-6">
+    <div className="Coaches">
       <h1 className="text-2xl font-bold mb-4">{title}</h1>
-      <div className="grid gap-4">
+      <div className="coachCardMap">
         {items.map((item) => (
           <div
             key={item.id}
-            className="rounded-xl border shadow-md p-4 hover:shadow-lg transition"
+            className="CoachImage"
           >
             {renderItem(item)}
           </div>

@@ -14,9 +14,7 @@ function CursusPage() {
               <div className="courseCard">
                 <div className="courseImage">
                   <img
-                    src="src/assets/course-placeholder.jpg"
-                    alt={course.name}
-                  />
+                    src="src/assets/benchpress.jpg" alt="Cursus" />
                 </div>
                 <div className="courseInfo">
                   <h2>{course.name}</h2>

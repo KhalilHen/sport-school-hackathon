@@ -5,13 +5,13 @@ import Subscriptions from "./pages/SubscriptionsPage/subscriptions";
 import CoachPage from "./pages/CoachPage/coachPage";
 import CursusPage from "./pages/CursusPage/cursusPage";
 import NavigationBar from "./components/NavBarComponent/navbarComponent";
-import CtaComponent from "./components/ctaComponent";
+
 function App() {
   return (
     <div>
       <NavigationBar />
       <Routes>
-        <Route path="/" element={<LandingsPage  />} />
+        <Route path="/" element={<LandingsPage />} />
         <Route path="/Subscriptions" element={<Subscriptions />} />
         <Route path="/CoachPage" element={<CoachPage />} />
         <Route path="/cursus" element={<CursusPage />} />

@@ -1,67 +1,131 @@
 .cursusPageContainer {
   padding: 20px;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+}
+
+.courseCardMap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.CourseItem {
+  flex: 1 1 calc(20% - 16px); // 5 per row if space allows
+  max-width: calc(20% - 16px);
+  display: flex;
+  box-sizing: border-box;
 }
 
 .courseCard {
-  width: 130px;
+  width: 100%;
   background: #f9f9f9;
-  border-radius: 25px;
-  margin: 12px;
-  flex: 1 1 calc(25% - 24px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-.courseCard h2 {
-  font-size: 1.5em;
-  margin-bottom: 8px;
-}
-
-.courseCard p {
- color: #000000;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .courseImage {
   width: 100%;
-  height: 130px;
-  background: #eee;
-  border-radius: 25px 25px 0px 0px;
-  border-bottom: solid 2px  #a7a7a7;
-}
+  height: 140px; // same as coach card image
+  background: #ddd;
 
-.courseImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 .courseInfo {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0 12px 12px;
+  font-size: 0.85rem;
+  color: #555;
+
+  p {
+    margin: 0;
+  }
+
+  p:first-child {
+    color: #777;
+    font-style: italic;
+  }
+
+  p:last-child {
+    font-weight: bold;
+    color: #000;
+  }
 }
 
 .courseUsers {
-  padding: 10px;
-  font-size: 0.8em;
+  padding: 0 12px 12px;
+  font-size: 0.8rem;
   color: #555;
 }
 
 .bookCourseBtn {
-  margin: 10px;
+  margin: 12px;
   padding: 8px;
   background: #4caf50;
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #45a049;
+  }
 }
 
-.bookCourseBtn:hover {
-  background: #45a049;
+/* ✅ Responsive tweaks */
+@media (max-width: 1200px) {
+  .CourseItem {
+    flex: 1 1 calc(25% - 16px); // 4 per row
+    max-width: calc(25% - 16px);
+  }
+}
+
+@media (max-width: 900px) {
+  .CourseItem {
+    flex: 1 1 calc(33.333% - 16px); // 3 per row
+    max-width: calc(33.333% - 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .CourseItem {
+    flex: 1 1 calc(50% - 16px); // 2 per row
+    max-width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 400px) {
+  .CourseItem {
+    flex: 1 1 100%; // 1 per row
+    max-width: 100%;
+  }
 }
