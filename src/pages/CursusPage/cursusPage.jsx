@@ -1,11 +1,47 @@
+import "../../css/Global.scss";
+import "./cursusPage.scss";
+import DataListPage from "../../components/DataListComponent/DataListComponent";
 
-export default function CursusPage() {
+function CursusPage() {
   return (
     <div className="container">
       <section className="hero">
-        <h1>Cursus Page</h1>
-        <p>Discover our range of courses designed to enhance your skills and performance!</p>
+        <div className="cursusPageContainer">
+          <DataListPage
+            title="Available Courses"
+            fetchUrl="http://localhost:5149/api/Cursus"
+            renderItem={(course) => (
+              <div className="courseCard">
+                <div className="courseImage">
+                  <img
+                    src="src/assets/course-placeholder.jpg"
+                    alt={course.name}
+                  />
+                </div>
+                <div className="courseInfo">
+                  <h2>{course.name}</h2>
+                  <p>{course.description}</p>
+                </div>
+                {course.users?.length > 0 && (
+                  <div className="courseUsers">
+                    <p>Enrolled Users:</p>
+                    <ul>
+                      {course.users.map((user) => (
+                        <li key={user.id}>
+                          {user.name} — {user.subscription?.name ?? "No Subscription"}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <button className="bookCourseBtn">Book Course</button>
+              </div>
+            )}
+          />
+        </div>
       </section>
     </div>
   );
 }
+
+export default CursusPage;
