@@ -1,3 +1,4 @@
+
 import { Routes, Route, Link } from "react-router-dom";
 import LandingsPage from "./pages/LandingPage/landingPage";
 import Subscriptions from "./pages/SubscriptionsPage/subscriptions";
@@ -19,4 +20,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default App
