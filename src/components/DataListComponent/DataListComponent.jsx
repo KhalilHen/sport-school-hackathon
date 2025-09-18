@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function DataListPage({ title, fetchUrl, renderItem }) {
+function DataListPage({ title, fetchUrl, renderItem, refreshTrigger }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -19,7 +19,7 @@ function DataListPage({ title, fetchUrl, renderItem }) {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [fetchUrl]);
+  }, [fetchUrl, refreshTrigger]);
 
 
   if (loading) return <p>Loading...</p>;
