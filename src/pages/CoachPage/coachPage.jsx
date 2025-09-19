@@ -36,7 +36,7 @@ export default function CoachPage({ user }) {
   // Handle booking a coach
   const handleBookCoach = (coachId) => {
     if (!user) {
-      alert("Please login to book a coach.");
+      alert("Login alsjeblieft om een coach te boeken.");
       return;
     }
 
@@ -51,12 +51,12 @@ export default function CoachPage({ user }) {
         return res.json();
       })
       .then((data) => {
-        alert(`Coach booked! Appointment ID: ${data.appointmentId} by ${user.name}`);
+        alert(`Coach geboekt! Afspraak ID: ${data.appointmentId} door ${user.name}`);
         fetchAppointments(coachId); // Refresh the booked users
       })
       .catch((err) => {
         console.error(err);
-        alert("Error booking coach.");
+        alert("Fout bij het boeken van coach.");
       });
   };
 
@@ -81,7 +81,7 @@ export default function CoachPage({ user }) {
                       <p>FitCoach {coach.specialization}</p>
                     </div>
                     <div className="coachInfo">
-                      <p>By {coach.name}</p>
+                      <p>Door {coach.name}</p>
                       <p>€35 {coach.price}</p>
                     </div>
                     <button
@@ -89,11 +89,11 @@ export default function CoachPage({ user }) {
                       className="bookCourseBtn"
                       disabled={!user || isBooked}
                     >
-                      {!user ? "Login to Book" : isBooked ? "Already Booked" : "Book Coach"}
+                      {!user ? "Login om te boeken" : isBooked ? "Al geboekt" : "Boek Coach"}
                     </button>
 
                     <div className="bookedUsers">
-                      <p>Booked by:</p>
+                      <p>Boekingen door:</p>
                       {bookedUsers.map((u) => (
                         <li key={u.id}>{u.name}</li>
                       ))}

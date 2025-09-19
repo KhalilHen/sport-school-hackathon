@@ -4,7 +4,7 @@ export default function LandingPage({ user }) {
 
   function handleCheckIn() {
     if (!user) {
-      alert("Please login to check in.");
+      alert("Login alsjeblieft om in te checken.");
       return;
     }
 
@@ -19,7 +19,7 @@ export default function LandingPage({ user }) {
         return JSON.parse(text); // parse successful response
       })
       .then(data => alert(data.message))
-      .catch(err => alert(err.message || "Check-in failed"));
+      .catch(err => alert(err.message || "Check-in mislukt."));
   }
 
 

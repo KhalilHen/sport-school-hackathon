@@ -39,7 +39,7 @@ export default function SubscriptionsPage({ user, setUser, currentSubscription, 
 
   const handleSelect = async (subscriptionId) => {
     if (!user) {
-      alert("Please login to change subscription.");
+      alert("Login om de abonnement te wijzigen.");
       return;
     }
 
@@ -68,12 +68,12 @@ export default function SubscriptionsPage({ user, setUser, currentSubscription, 
       setCurrentSubscription(updatedSub);       // update NavBar button
     } catch (err) {
       console.error(err);
-      alert("Error updating subscription.");
+      alert("Fout bij het bijwerken van abonnement.");
     }
   };
 
   const handleCancel = () => {
-    if (!user) return alert("Please login first");
+    if (!user) return alert("Login om te annuleren");
 
     fetch("http://localhost:5149/api/Subscription/cancel", {
       method: "POST",
@@ -90,7 +90,7 @@ export default function SubscriptionsPage({ user, setUser, currentSubscription, 
       })
       .catch((err) => {
         console.error(err);
-        alert("Error cancelling subscription");
+        alert("Fout bij het annuleren van abonnement.");
       });
   };
 
@@ -123,7 +123,7 @@ export default function SubscriptionsPage({ user, setUser, currentSubscription, 
                       onClick={() => handleSelect(sub.id)}
                       disabled={selectedSubscriptionId === sub.id}
                     >
-                      {selectedSubscriptionId === sub.id ? "Selected" : "Select"}
+                      {selectedSubscriptionId === sub.id ? "Geselecteerd" : "Selecteer"}
                     </button>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function SubscriptionsPage({ user, setUser, currentSubscription, 
               {user && selectedSubscriptionId !== null && (
                 <div className="cancel-subscription">
                   <button onClick={handleCancel} className="cancelButton">
-                    Cancel Membership
+                    Annuleer Lidmaatschap
                   </button>
                 </div>
 

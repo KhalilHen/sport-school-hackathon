@@ -8,12 +8,12 @@ export default function CursusPage({ user }) {
 
   const handleBookCourse = (courseName, enrolledUsers) => {
     if (!user) {
-      alert("Please login to book a course.");
+      alert("Login alsjeblieft om een cursus te boeken.");
       return;
     }
 
     if (enrolledUsers?.some(u => u.id === user.id)) {
-      alert("You are already enrolled in this course.");
+      alert("Je bent al ingeschreven voor deze cursus.");
       return;
     }
 
@@ -55,14 +55,14 @@ export default function CursusPage({ user }) {
                       <p>{course.description}</p>
                     </div>
                     <div className="coachInfo">
-                      <p>Enrolled Users: {course.users?.length || 0}</p>
+                      <p>Ingeschreven Gebruikers: {course.users?.length || 0}</p>
                     </div>
                     <button
                       className="bookCourseBtn"
                       onClick={() => handleBookCourse(course.name, course.users)}
                       disabled={!user || isEnrolled}
                     >
-                      {!user ? "Login to Book" : isEnrolled ? "Already Enrolled" : "Book Course"}
+                      {!user ? "Login om te boeken" : isEnrolled ? "Al ingeschreven" : "Boek Cursus"}
                     </button>
                   </div>
                 </div>
