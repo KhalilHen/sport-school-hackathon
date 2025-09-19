@@ -34,7 +34,7 @@ export default function LandingPage({ user }) {
               <p>Of je nu spieren wilt opbouwen, conditie wilt verbeteren of gewoon lekker wilt trainen: bij ons vind je de juiste sfeer, de beste apparatuur en de motivatie om alles uit jezelf te halen.</p>
               <h4>Stap binnen en ontdek jouw kracht.</h4>
             </div>
-            <button onClick={handleCheckIn} disabled={!user}>Scan QR code</button>
+            <button onClick={handleCheckIn} >Scan QR code</button>
           </div>
           <div className="HomePageImage">
             <img src="src/assets/Gespierdeman.jpg" alt="Sport Image" width={400} height={500} />
