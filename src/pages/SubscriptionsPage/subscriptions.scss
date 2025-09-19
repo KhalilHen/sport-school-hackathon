@@ -11,6 +11,12 @@
 
 .cardContainer{
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards{
+  display: flex;
   flex-direction: row;
   gap: 20px;
 }
@@ -60,3 +66,10 @@
     translate: 0px -10px;
   
   }
+
+.subscriptionActions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

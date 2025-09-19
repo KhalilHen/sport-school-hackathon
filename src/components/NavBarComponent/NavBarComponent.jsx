@@ -1,59 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 
-function NavigationBar() {
-    const [user, setUser] = useState(null);
+function NavigationBar({ user, setUser, currentSubscription }) {
     const [loading, setLoading] = useState(false);
 
-    //Get all users from backend for testing purposes
-    useEffect(() => {
-        async function fetchAllUsers() {
-            try {
-                const response = await fetch("https://localhost:7147/api/User", {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
-
-                if (!response.ok) {
-                    throw new Error("Failed to fetch all users");
-                }
-
-                const data = await response.json();
-                console.log("All users from backend:", data);
-            } catch (error) {
-                console.error("Error fetching all users:", error);
-            }
+    async function handleLoginLogout() {
+        if (user) {
+            // If user is logged in, log them out
+            setUser(null);
+            return;
         }
 
-        fetchAllUsers();
-    }, []);
-
-
-    async function handleLogin() {
         try {
             setLoading(true);
 
-            const userId = "1"; // Replace with actual user ID or logic to get it
+            // Pick a random user ID from 0, 1, 2
+            const userId = Math.floor(Math.random() * 3);
 
-            const response = await fetch(`https://localhost:7147/api/User/${userId}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ /* Any required body data */ }),
+            // Fetch user data
+            const response = await fetch(`http://localhost:5149/api/User/${userId}`, {
+                method: "GET",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
             });
 
-
-            if (!response.ok) {
-                throw new Error("login failed");
-            }
+            if (!response.ok) throw new Error("Login failed");
 
             const data = await response.json();
 
-            setUser(data.user);
+            // Fetch the user's subscription by userId (fixed endpoint)
+            const subResponse = await fetch(`http://localhost:5149/api/Subscription/${data.id}`, {
+                method: "GET",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+            });
+
+            let abonnementType = "Unknown";
+            let subData = null;
+
+            if (subResponse.ok) {
+                subData = await subResponse.json();
+                abonnementType = subData.name; // e.g., "Starter", "Basic", "Unlimited"
+            }
+
+            // Set the user with subscription info
+            setUser({
+                id: data.id,
+                name: data.name,
+                abonnementType,
+            });
+
         } catch (error) {
             console.error("Error during login:", error);
             alert("Login failed. Please try again.");
@@ -61,7 +58,6 @@ function NavigationBar() {
             setLoading(false);
         }
     }
-
 
     return (
         <nav className="navbar">
@@ -76,15 +72,13 @@ function NavigationBar() {
             </div>
 
             <div className="login-button">
-                {user ? (
-                    <button disabled>
-                        {user.name} ({user.abonnementType})
-                    </button>
-                ) : (
-                    <button onClick={handleLogin} disabled={loading}>
-                        {loading ? "Loading..." : "Login"}
-                    </button>
-                )}
+                <button onClick={handleLoginLogout} disabled={loading}>
+                    {loading
+                        ? "Loading..."
+                        : user
+                            ? `${user.name}${currentSubscription ? ` (${currentSubscription.name})` : ""} - Logout`
+                            : "Login"}
+                </button>
 
             </div>
         </nav>
